@@ -18,6 +18,7 @@ const navLinks = [
   { id: 'strategyDashboard', label: 'Audiens' },
   { id: 'investment', label: 'Investasi' },
   { id: 'ancillary', label: 'Model Bisnis' },
+  { id: 'supplierMarket', label: 'Pemasok' },
   { id: 'investmentDetails', label: 'Rincian Investasi' },
   { id: 'faq', label: 'FAQ' },
 ];

@@ -24,11 +24,12 @@ export const courtDistributionData = [
 ];
 
 export const operatorMarketShareData = [
-    { name: 'Major Operator A', value: 35 },
-    { name: 'Major Operator B', value: 25 },
-    { name: 'Local Clubs', value: 20 },
-    { name: 'New Entrants', value: 15 },
-    { name: 'Others', value: 5 },
+    { name: 'Klub Independen Besar', value: 25 },
+    { name: 'Pendatang Baru (2024+)', value: 20 },
+    { name: 'Grup Homeground', value: 18 },
+    { name: 'Republic Padel', value: 15 },
+    { name: 'Jaringan Padel Pro', value: 12 },
+    { name: 'Lainnya', value: 10 },
 ];
 
 export const indonesianCourtGrowthData = [
@@ -55,16 +56,18 @@ export const playerSegmentsData = [
     { name: 'Other', value: 10 },
 ];
 
-export const competitiveLandscapeData = {
-    highCost: [
-        { name: 'Professional Photographer', automation: 'Low', position: { top: '15%', left: '80%' } },
-        { name: '360° Video Replay System', automation: 'Medium', position: { top: '30%', left: '75%' } },
-    ],
-    lowCost: [
-        { name: 'Action Camera (GoPro)', automation: 'Low', position: { top: '80%', left: '20%' } },
-        { name: 'Smartphone Editing Apps', automation: 'Low', position: { top: '90%', left: '10%' } },
-    ],
-};
+export const competitiveLandscapeData = [
+    // High Cost / High Automation
+    { name: 'Sistem Kamera AI Multi-sudut', position: { top: '15%', left: '75%' } },
+    // High Cost / Low Automation
+    { name: 'Fotografer Olahraga Profesional', position: { top: '20%', left: '15%' } },
+    { name: 'Sistem Video Replay 360°', position: { top: '35%', left: '20%' } },
+    // Low Cost / High Automation
+    { name: 'Aplikasi Analisis Pukulan (Swing Vision)', position: { top: '70%', left: '80%' } },
+    // Low Cost / Low Automation
+    { name: 'Smartphone Pribadi + Statif', position: { top: '85%', left: '10%' } },
+    { name: 'Kamera Aksi (GoPro)', position: { top: '75%', left: '25%' } },
+];
 
 export const regionalMarketShareData = [
     { market: 'Jakarta', 'PadelPro Group': 40, 'Urban Padel': 35, 'Others': 25 },

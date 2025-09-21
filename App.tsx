@@ -18,6 +18,7 @@ import InvestmentSection from './components/sections/InvestmentSection';
 import StrategyDashboardSection from './components/sections/StrategyDashboardSection';
 import AncillaryBusinessModelSection from './components/sections/AncillaryBusinessModelSection';
 import InvestmentDetailsSection from './components/sections/InvestmentDetailsSection';
+import SupplierMarketSection from './components/sections/SupplierMarketSection';
 import FAQSection from './components/sections/FAQSection';
 
 const App: React.FC = () => {
@@ -35,6 +36,7 @@ const App: React.FC = () => {
         investment: useRef<HTMLElement>(null),
         ancillary: useRef<HTMLElement>(null),
         investmentDetails: useRef<HTMLElement>(null),
+        supplierMarket: useRef<HTMLElement>(null),
         faq: useRef<HTMLElement>(null),
     };
 
@@ -55,6 +57,7 @@ const App: React.FC = () => {
                 <StrategyDashboardSection ref={sectionRefs.strategyDashboard} />
                 <InvestmentSection ref={sectionRefs.investment} />
                 <AncillaryBusinessModelSection ref={sectionRefs.ancillary} />
+                <SupplierMarketSection ref={sectionRefs.supplierMarket} />
                 <InvestmentDetailsSection ref={sectionRefs.investmentDetails} />
                 <FAQSection ref={sectionRefs.faq} />
             </main>

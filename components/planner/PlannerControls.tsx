@@ -130,14 +130,6 @@ const PlannerControls: React.FC<PlannerControlsProps> = ({ state, actions }) => 
                         </>
                     )}
                 </div>
-
-
-                <div className="flex items-center justify-center p-3 bg-slate-100 dark:bg-brand-dark rounded-md mt-4">
-                    <div className="flex items-center">
-                        <Search className="h-5 w-5 mr-2 text-brand-cyan" />
-                        <span className="text-sm font-medium text-slate-700 dark:text-brand-text-muted">Menggunakan data real-time dari Google Search</span>
-                    </div>
-                </div>
                 {stage === 'initial' && (
                     <button onClick={startOutlineGeneration} disabled={isLoading || !selectedLocation || imageAnalysisLoading} className="w-full bg-brand-cyan hover:bg-cyan-500 text-white font-bold py-3 px-4 rounded-md transition duration-300 disabled:bg-slate-500 disabled:cursor-not-allowed flex items-center justify-center">
                         <ListChecks className="mr-2 h-5 w-5" /> Buat Kerangka Analisis
