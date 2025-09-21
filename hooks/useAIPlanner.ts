@@ -134,7 +134,7 @@ export const useAIPlanner = () => {
             try {
                 const base64String = previewUrl.split(',')[1];
                 const result = await analyzeLocationImage(base64String, file.type);
-                if (result?.locationName) {
+                if (result && result.locationName && typeof result.latitude === 'number' && typeof result.longitude === 'number') {
                     setSelectedLocation(result.locationName);
                     setDetectedCoordinates({ latitude: result.latitude, longitude: result.longitude });
                 } else {
@@ -185,6 +185,7 @@ export const useAIPlanner = () => {
     usePlannerEffects({
         stage, selectedLocation, locations, outlineLength: editableOutline.length,
         setGenerationProgress, setShowCelebration,
+        imagePreviewUrl, detectedCoordinates,
     });
 
     return {

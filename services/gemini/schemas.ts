@@ -3,11 +3,10 @@ import { Type } from "@google/genai";
 export const analyzeLocationSchema = {
     type: Type.OBJECT,
     properties: {
-        locationName: { type: Type.STRING, description: 'The identified location name, like "Central Park, Jakarta, Provinsi DKI Jakarta"' },
-        latitude: { type: Type.NUMBER },
-        longitude: { type: Type.NUMBER }
-    },
-    required: ['locationName', 'latitude', 'longitude']
+        locationName: { type: Type.STRING, description: 'The identified location name, like "Central Park, Jakarta, Provinsi DKI Jakarta". Can be null if not identifiable from the image.' },
+        latitude: { type: Type.NUMBER, description: 'The latitude of the location. Can be null.' },
+        longitude: { type: Type.NUMBER, description: 'The longitude of the location. Can be null.' }
+    }
 };
 
 

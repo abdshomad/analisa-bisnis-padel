@@ -1,5 +1,9 @@
 export const getLocationAnalysisPrompt = (): string => `Analyze the attached image. Identify the specific location name (including city and province if possible), and determine its geographical coordinates (latitude and longitude). Respond only in JSON format matching the provided schema. If the location cannot be identified, return null for all fields.`;
 
+export const getReverseGeocodePrompt = (latitude: number, longitude: number): string => (
+    `Berdasarkan koordinat berikut - Latitude: ${latitude}, Longitude: ${longitude} - berikan nama lokasi yang paling sesuai dalam format "Nama Tempat/Area, Kota, Provinsi" di Indonesia. Hanya kembalikan nama lokasi sebagai string teks biasa.`
+);
+
 export const getBusinessOutlinePrompt = (
     province: string, 
     courtCount: number, 

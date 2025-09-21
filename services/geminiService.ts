@@ -2,6 +2,7 @@ import { ai } from './gemini/client';
 import { analyzeLocationSchema, outlineSchema, insightSchema } from './gemini/schemas';
 import { 
     getLocationAnalysisPrompt, 
+    getReverseGeocodePrompt,
     getBusinessOutlinePrompt, 
     getFullAnalysisPrompt, 
     getBusinessPlanPrompt,
@@ -28,9 +29,40 @@ export const analyzeLocationImage = async (base64Image: string, mimeType: string
             config: { responseMimeType: "application/json", responseSchema: analyzeLocationSchema }
         });
         const parsed = JSON.parse(response.text.trim());
-        if (parsed.locationName && typeof parsed.latitude === 'number' && typeof parsed.longitude === 'number') {
-            return parsed;
+
+        // We MUST have coordinates.
+        if (typeof parsed.latitude !== 'number' || typeof parsed.longitude !== 'number') {
+            return null; // No coordinates, can't proceed.
         }
+
+        // If we also got a name, great! Return immediately.
+        if (parsed.locationName) {
+            return {
+                locationName: parsed.locationName,
+                latitude: parsed.latitude,
+                longitude: parsed.longitude,
+            };
+        }
+
+        // If we have coordinates but NO name, try to get the name from coordinates using another AI call.
+        console.log(`Coordinates found (${parsed.latitude}, ${parsed.longitude}), but no location name. Performing reverse geocode...`);
+        const reverseGeocodePrompt = getReverseGeocodePrompt(parsed.latitude, parsed.longitude);
+        const nameResponse = await ai.models.generateContent({
+            model: 'gemini-2.5-flash',
+            contents: reverseGeocodePrompt,
+            config: { temperature: 0.1 } // Low temp for factual response
+        });
+
+        const locationName = nameResponse.text.trim();
+        if (locationName) {
+            return {
+                locationName: locationName,
+                latitude: parsed.latitude,
+                longitude: parsed.longitude
+            };
+        }
+        
+        // If reverse geocoding also fails, we can't provide a location.
         return null;
     } catch (error) {
         console.error("Error analyzing location image:", error);

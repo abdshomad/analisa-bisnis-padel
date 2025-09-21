@@ -11,6 +11,8 @@ interface PlannerEffectsProps {
     // to accept both a direct value and an updater function, resolving a TypeScript error.
     setGenerationProgress: (update: number | ((prev: number) => number)) => void;
     setShowCelebration: (show: boolean) => void;
+    imagePreviewUrl: string | null;
+    detectedCoordinates: { latitude: number; longitude: number } | null;
 }
 
 export const usePlannerEffects = ({
@@ -20,6 +22,8 @@ export const usePlannerEffects = ({
     outlineLength,
     setGenerationProgress,
     setShowCelebration,
+    imagePreviewUrl,
+    detectedCoordinates,
 }: PlannerEffectsProps) => {
     const debouncedCheckRef = useRef<number | null>(null);
 
@@ -29,13 +33,25 @@ export const usePlannerEffects = ({
         if (stage !== 'initial' || !selectedLocation) return;
 
         debouncedCheckRef.current = window.setTimeout(() => {
-            if (!locations.some(loc => loc.toLowerCase() === selectedLocation.trim().toLowerCase()) && selectedLocation.trim() !== '') {
+            const isNewLocation = !locations.some(loc => loc.toLowerCase() === selectedLocation.trim().toLowerCase()) && selectedLocation.trim() !== '';
+
+            if (!isNewLocation) return;
+            
+            // If the location change came from image analysis, only celebrate if coordinates were successfully detected.
+            // Otherwise, if it was typed manually, celebrate a new location.
+            if (imagePreviewUrl) {
+                if (detectedCoordinates) {
+                    setShowCelebration(true);
+                    setTimeout(() => setShowCelebration(false), 4000);
+                }
+            } else {
                 setShowCelebration(true);
                 setTimeout(() => setShowCelebration(false), 4000);
             }
         }, 750);
+        
         return () => { if (debouncedCheckRef.current) clearTimeout(debouncedCheckRef.current) };
-    }, [selectedLocation, locations, stage, setShowCelebration]);
+    }, [selectedLocation, locations, stage, setShowCelebration, imagePreviewUrl, detectedCoordinates]);
 
     // Effect for analysis progress simulation
     useEffect(() => {
