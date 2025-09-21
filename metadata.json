@@ -1,0 +1,7 @@
+{
+  "name": "Bisnis Padel",
+  "description": "Dasbor analisis pasar komprehensif untuk bisnis padel di Indonesia, menyediakan data, proyeksi, dan analisis yang didukung AI untuk membantu pengambilan keputusan strategis.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

@@ -1,0 +1,30 @@
+import type { Court } from '../../types';
+import { IndonesianProvinces } from '../../types';
+
+export const jawaTengahCourts: Court[] = [
+  { id: 238, name: 'Dupan Padel Club Pekalongan', address: 'Kota Pekalongan', city: 'Kota Pekalongan', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Rp 150rb - 250rb' },
+  { id: 239, name: 'Unity Sports Center', address: 'Kota Semarang', city: 'Kota Semarang', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Rp 160rb - 200rb' },
+  { id: 240, name: 'Mesa Padel', address: 'Kota Semarang', city: 'Kota Semarang', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Rp 250rb - 300rb' },
+  { id: 241, name: 'Candu Padel', address: 'Kota Pekalongan', city: 'Kota Pekalongan', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Rp 170rb - 190rb' },
+  { id: 242, name: 'Padel Ground Semarang', address: 'Kota Semarang', city: 'Kota Semarang', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Rp 230rb - 275rb' },
+  { id: 243, name: 'Purwokerto Padel Club', address: 'Kabupaten Banyumas', city: 'Kabupaten Banyumas', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Rp 200rb - 300rb' },
+  { id: 244, name: 'Pine Sports Venues', address: 'Kabupaten Banyumas', city: 'Kabupaten Banyumas', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Mulai dari Rp 120rb' },
+  { id: 245, name: 'Terra Padel Solo', address: 'Kota Surakarta', city: 'Kota Surakarta', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Mulai dari Rp 140.625rb' },
+  { id: 246, name: 'First Padel House', address: 'Kota Surakarta', city: 'Kota Surakarta', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Mulai dari Rp 300rb' },
+  { id: 247, name: 'Hola Padel And Pickle Social Court', address: 'Kota Surakarta', city: 'Kota Surakarta', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Mulai dari Rp 2rb' },
+  { id: 248, name: 'East Padel House Purwokerto', address: 'Kabupaten Banyumas', city: 'Kabupaten Banyumas', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 249, name: 'Fullhouse Padel Semarang', address: 'Kota Semarang', city: 'Kota Semarang', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor', price: 'Mulai dari Rp 250rb' },
+  { id: 250, name: 'Fullhouse Padel Solo', address: 'Kota Surakarta', city: 'Kota Surakarta', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 251, name: 'Verdant Padel Court', address: 'Kota Surakarta', city: 'Kota Surakarta', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 252, name: 'Main Padel Semarang', address: 'Kota Semarang', city: 'Kota Semarang', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 253, name: 'Main Padel Cirebon', address: 'Kota Cirebon', city: 'Kota Cirebon', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 254, name: 'Main Padel Solo', address: 'Kabupaten Sukoharjo', city: 'Kabupaten Sukoharjo', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 255, name: 'Social Padel Purwokerto', address: 'Kabupaten Banyumas', city: 'Kabupaten Banyumas', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 256, name: 'Solo Padel Club', address: 'Kota Surakarta', city: 'Kota Surakarta', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 257, name: 'Mon Padel Solo', address: 'Kota Surakarta', city: 'Kota Surakarta', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 258, name: 'Fuego Padel Club', address: 'Kota Tegal', city: 'Kota Tegal', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 259, name: 'Amare Padel Club Sadeng', address: 'Kota Semarang', city: 'Kota Semarang', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 260, name: 'Amare Padel Club Papandayan', address: 'Kota Semarang', city: 'Kota Semarang', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 261, name: 'Super Padel', address: 'Kota Semarang', city: 'Kota Semarang', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+  { id: 262, name: 'Padel Ground Reserve', address: 'Kota Semarang', city: 'Kota Semarang', province: IndonesianProvinces.JAWA_TENGAH, courts: 1, category: 'Outdoor' },
+];
